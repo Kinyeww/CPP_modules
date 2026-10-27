@@ -41,11 +41,11 @@ void	PhoneBook::search_contact(void)
 		return ;
 	}
 	display_saved_contact();
-	std::cout << "Who would you like to search for?\nIndex : ";
+	std::cout << "Who would you like to search for? (exit to go back)\nIndex : ";
 	std::getline(std::cin, input);
 	if (check_exit(input) == 0)
 		return ;
-	if (input.length() != 1 || input[0] <= '0' || input[0] >= '8')
+	if (input.length() != 1 || input[0] <= '0' || input[0] > (count + '0'))
 	{
 		std::cout << "\033[31mInvalid index detected\n\n----!!! PHONEBOOK SELF DESTRUCT INITIATED !!!-----\033[0m";
 		return ;

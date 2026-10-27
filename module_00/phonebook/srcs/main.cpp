@@ -1,30 +1,6 @@
 #include "PhoneBook.hpp"
 
-int	check_add(std::string check);
-int	check_search(std::string check);
-int	check_exit(std::string check);
-
-int	main(void)
-{
-	PhoneBook	phonebook;
-	std::string	check;
-
-	std::cout << "Hi, welcome to ONE-WISH phonebook, how can we help you?\nYou may do: ADD SEARCH EXIT\n";
-	while (1)
-	{
-		std::getline(std::cin, check);
-		if (check_add(check) == 0)
-			phonebook.add_to_contact();
-		else if (check_search(check) == 0)
-			phonebook.search_contact();
-		else if (check_exit(check) == 0)
-			break ;
-		std::cout << "\nwhat do you wanna do next? (add, search, exit) : "	;
-	}
-	return (0);
-}
-
-int	check_add(std::string check)
+static int	check_add(std::string check)
 {
 	int	i;
 
@@ -42,7 +18,7 @@ int	check_add(std::string check)
 	return (0);
 }
 
-int	check_search(std::string check)
+static int	check_search(std::string check)
 {
 	int	i;
 
@@ -66,7 +42,7 @@ int	check_search(std::string check)
 	return (0);
 }
 
-int	check_exit(std::string check)
+static int	check_exit(std::string check)
 {
 	int	i;
 
@@ -83,5 +59,25 @@ int	check_exit(std::string check)
 		return (1);
 	if (check[3] != 't' && check[3] != 'T')
 		return (1);
+	return (0);
+}
+
+int	main(void)
+{
+	PhoneBook	phonebook;
+	std::string	check;
+
+	std::cout << "Hi, welcome to ONE-WISH phonebook, how can we help you?\nYou may do: ADD SEARCH EXIT\n";
+	while (1)
+	{
+		std::getline(std::cin, check);
+		if (check_add(check) == 0)
+			phonebook.add_to_contact();
+		else if (check_search(check) == 0)
+			phonebook.search_contact();
+		else if (check_exit(check) == 0)
+			break ;
+		std::cout << "\nwhat do you wanna do next? (add, search, exit) : ";
+	}
 	return (0);
 }
