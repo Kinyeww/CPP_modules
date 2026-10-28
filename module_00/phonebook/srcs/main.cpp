@@ -67,7 +67,7 @@ int	main(void)
 	PhoneBook	phonebook;
 	std::string	check;
 
-	std::cout << "Hi, welcome to ONE-WISH phonebook, how can we help you?\nYou may do: ADD SEARCH EXIT\n";
+	std::cout << "Hi, welcome to ONE-WISH phonebook, how can we help you?\nYou may do: (add, search, exit)\n:";
 	while (1)
 	{
 		std::getline(std::cin, check);

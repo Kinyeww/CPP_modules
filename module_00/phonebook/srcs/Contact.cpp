@@ -27,7 +27,7 @@ bool	Contact::init_contact()
 	return (true);
 }
 
-std::string	Contact::get_item(std::string str)
+std::string	Contact::get_item(std::string str) const
 {
 	if (str == "first_name")
 		return (first_name);
