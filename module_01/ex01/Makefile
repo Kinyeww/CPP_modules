@@ -1,4 +1,4 @@
-NAME = Zombie
+NAME = zombieHorde
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 
