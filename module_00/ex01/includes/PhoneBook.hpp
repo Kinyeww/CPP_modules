@@ -3,7 +3,6 @@
 
 # include "Contact.hpp"
 # include <iostream>
-# include <string.h>
 
 class PhoneBook
 {

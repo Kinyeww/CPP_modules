@@ -1,6 +1,6 @@
 NAME = phonebook
-GPP = g++
-GPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
+CPP = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 
 SRCS = srcs/main.cpp srcs/PhoneBook.cpp srcs/Contact.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -8,10 +8,10 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(GPP) $(GPPFLAGS) $(OBJS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(GPP) $(GPPFLAGS) -c $< -o $@
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
@@ -20,8 +20,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean $(NAME)
-
-me: re
-	rm -rf $(OBJS)
 
 .PHONY: all clean fclean re me

@@ -68,9 +68,8 @@ int	main(void)
 	std::string	check;
 
 	std::cout << "Hi, welcome to ONE-WISH phonebook, how can we help you?\nYou may do: (add, search, exit)\n:";
-	while (1)
+	while (std::getline(std::cin, check))
 	{
-		std::getline(std::cin, check);
 		if (check_add(check) == 0)
 			phonebook.add_to_contact();
 		else if (check_search(check) == 0)

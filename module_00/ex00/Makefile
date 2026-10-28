@@ -1,6 +1,6 @@
 NAME = megaphone
-GPP = g++
-GPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPP = c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -8,10 +8,10 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(GPP) $(GPPFLAGS) $(OBJS) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(GPP) $(GPPFLAGS) -c $< -o $@
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean: 
 	rm -rf $(OBJS)

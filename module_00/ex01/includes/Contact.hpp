@@ -13,7 +13,7 @@ class	Contact
 		std::string	darkest_secret;
 	public:
 		bool		init_contact();
-		std::string	get_item(std::string str) const;
+		std::string	get_item(std::string str);
 };
 
 #endif
