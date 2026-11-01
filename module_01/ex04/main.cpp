@@ -30,14 +30,19 @@ int	main(int ac, char **av)
 		std::cout << "Error: File cant be opened" << '\n';
 		return (1);
 	}
+	while (in.get(c))
+		text += c;
+	if (in.bad())
+	{
+		std::cout << "Error: Failed to read file" << '\n';
+		return (1);
+	}
 	std::ofstream	out(outFilename.c_str());
 	if (!out)
 	{
 		std::cout << "Error: Cannot create output file" << '\n';
 		return (1);
 	}
-	while (in.get(c))
-		text += c;
 	next = text.find(oldText, pos);
 	while (next != std::string::npos)
 	{
