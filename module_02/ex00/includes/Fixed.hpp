@@ -6,11 +6,15 @@
 class Fixed
 {
 private:
-	int					fixedPoint;
-	static const int	fracBits;
+	int					_value;
+	static const int	fracBits = 8; //static in member means shared value
 public:
-	Fixed(/* args */);
+	Fixed();
+	Fixed(const Fixed &f);
+	Fixed &operator=(const Fixed &f);
 	~Fixed();
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 };
 
 #endif
