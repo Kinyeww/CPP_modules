@@ -11,6 +11,8 @@ int	main(void)
 	std::cout << stringPTR << '\n';
 	std::cout << &stringREF << '\n';
 
+
+	stringREF = "Keith lol";
 	std::cout << message << '\n';	
 	std::cout << *stringPTR << '\n';
 	std::cout << stringREF << '\n';
