@@ -125,7 +125,7 @@ Fixed	Fixed::operator/(const Fixed &other) const
 	Fixed	res;
 
 	result = this->_value / other._value;
-	result = result / (1 << fracBits);
+	result = result * (1 << fracBits);
 	res.setRawBits(result);
 	return (res);
 }
