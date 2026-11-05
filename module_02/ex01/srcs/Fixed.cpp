@@ -20,7 +20,7 @@ Fixed::Fixed(const float value) : _value(roundf(value * (1 << fracBits))) //floa
 Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy Constructor called" << '\n';
-	_value = f._value;
+	_value = f.getRawBits();
 }
 
 Fixed	&Fixed::operator=(const Fixed &f)
@@ -28,8 +28,8 @@ Fixed	&Fixed::operator=(const Fixed &f)
     std::cout << "Copy assignment operator called\n";
 
     if (this != &f)
-        this->_value = f._value;
-    return *this;
+        this->_value = f.getRawBits();
+    return (*this);
 }
 
 Fixed::~Fixed()
