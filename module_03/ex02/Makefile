@@ -2,7 +2,7 @@ NAME = FragTrap
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 
-SRCS = srcs/main.cpp srcs/ClapTrap.cpp srcs/FragTrap.cpp
+SRCS = srcs/main.cpp srcs/ClapTrap.cpp srcs/ScavTrap.cpp srcs/FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
