@@ -1,9 +1,14 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{
+	std::cout << "ClapTrap " << _name << " default constructed." << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : 	_name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << _name << " default constructed." << '\n';
+	std::cout << "ClapTrap " << _name << " constructed." << '\n';
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -49,6 +54,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		this->_hitPoints = 0;
 	else
 		this->_hitPoints -= amount;
+	std::cout << "ClapTrap " << this->_name << " took " << amount 
+			<< " damage! Current HP: " << this->_hitPoints << '\n';
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

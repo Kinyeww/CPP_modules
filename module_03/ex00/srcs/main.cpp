@@ -9,5 +9,7 @@ int	main()
 	b.takeDamage(50);
 	b.attack("hehehehaw");
 	b.beRepaired(10);
+	for (int i = 0; i < 10; i++)
+		a.beRepaired(10);
 	return (0);
 }
