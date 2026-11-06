@@ -1,8 +1,8 @@
-NAME = 
+NAME = ClapTrap
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 
-SRCS = srcs/main.cpp srcs/Fixed.cpp
+SRCS = srcs/main.cpp srcs/ClapTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
