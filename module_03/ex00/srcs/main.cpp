@@ -2,14 +2,12 @@
 
 int	main()
 {
-	ClapTrap a("liting");
-	ClapTrap b("kinyew");
+	ClapTrap a("hehe");
+	ClapTrap b("haha");
 
-	a.attack("kinyew");
+	a.attack("hoho"); //pdf mention should not interact with other
 	b.takeDamage(50);
-	b.attack("liting");
-	// b.beRepaired(10);
-	for (int i = 0; i < 10; i++)
-		b.attack("testing");
+	b.attack("hehehehaw");
+	b.beRepaired(10);
 	return (0);
 }

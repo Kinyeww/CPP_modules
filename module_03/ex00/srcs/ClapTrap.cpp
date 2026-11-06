@@ -27,7 +27,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap " << _name << " destructed." << std::endl;
+	std::cout << "ClapTrap " << _name << " destructed." << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -60,7 +60,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_energyPoints--;
 		this->_hitPoints += amount;
 		std::cout << "ClapTrap " << this->_name << " repairs itself for " << amount 
-              << " HP! Current HP: " << this->_hitPoints << '\n';
+			<< " HP! Current HP: " << this->_hitPoints << '\n';
 	}
 	else
 		std::cout << "Claptrap " << this->_name << " has no energy left!" << '\n';
