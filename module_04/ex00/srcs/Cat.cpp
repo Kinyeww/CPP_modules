@@ -9,7 +9,6 @@ Cat::Cat()
 
 Cat::~Cat()
 {
-	delete (this);
 	std::cout << "Cat destructor called" << '\n';
 }
 

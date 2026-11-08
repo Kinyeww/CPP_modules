@@ -17,3 +17,6 @@ class Animal
 };
 
 #endif
+
+// basically virtual is meant for dynamic binding and late binding.
+// how it works is basically delay the binding of function target from compile time to runtime.
