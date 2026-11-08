@@ -1,7 +1,8 @@
 #include <iostream>
 #include "Cat.hpp"
+#include "Animal.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
 	_type = "Cat";
 	std::cout << "Cat constructor called" << '\n';
@@ -12,9 +13,10 @@ Cat::~Cat()
 	std::cout << "Cat destructor called" << '\n';
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal(other)
 {
 	std::cout << "Cat copy constructor called" << '\n';
+	Animal::operator=(other);
 	*this = other;
 }
 
