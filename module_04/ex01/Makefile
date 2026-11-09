@@ -1,4 +1,4 @@
-NAME = Animal
+NAME = AnimalWithBrain
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 SRCS = srcs/main.cpp srcs/Cat.cpp srcs/Dog.cpp srcs/Animal.cpp srcs/WrongAnimal.cpp srcs/WrongCat.cpp srcs/Brain.cpp

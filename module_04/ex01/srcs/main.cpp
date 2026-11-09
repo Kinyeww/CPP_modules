@@ -7,9 +7,9 @@
 
 int	main(void)
 {
-	Animal *animals[2] = { new Dog(), new Cat() };
+	Animal *animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
 	animals[0]->makeSound();
-	animals[1]->makeSound();
+	animals[2]->makeSound();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
@@ -26,7 +26,9 @@ int	main(void)
 	z = x;
 	delete j;//should not create a leak (constructor call new for brain and destructor call delete for brain)
 	delete i;
-	delete animals[0];
-	delete animals[1];
+
+	int num = 4;
+	while (animals[--num])
+		delete animals[num];
 	return (0);
 }
