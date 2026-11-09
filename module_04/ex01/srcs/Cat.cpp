@@ -28,7 +28,7 @@ Cat& Cat::operator=(const Cat& other)
 	if (this != &other)
 	{
 		this->_type = other._type;
-		*this->_brain = *other._brain;
+		*this->_brain = *other._brain; // let brain handle the deep copy of the ideas array
 	}
 	return *this;
 }

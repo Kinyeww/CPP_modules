@@ -19,6 +19,7 @@ Dog::~Dog()
 Dog::Dog(const Dog& other) : Animal(other)
 {
 	std::cout << "Dog copy constructor called" << '\n';
+	this->_brain = new Brain(); // allocate new memory for the brain pointer
 	*this = other;
 }
 
@@ -28,7 +29,7 @@ Dog& Dog::operator=(const Dog& other)
 	if (this != &other)
 	{
 		this->_type = other._type;
-		this->_brain = new Brain(*other._brain);
+		*this->_brain = *other._brain; // let brain handle the deep copy of the ideas array
 	}
 	return *this;
 }
