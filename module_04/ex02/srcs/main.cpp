@@ -14,5 +14,7 @@ int	main(void)
 	// generalAnimal->makeSound();
 	cat->makeSound();
 	dog->makeSound();
+	delete cat;
+	delete dog;
 	return (0);
 }
