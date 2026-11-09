@@ -28,7 +28,7 @@ int	main(void)
 	delete i;
 
 	int num = 4;
-	while (animals[--num])
+	while (--num >= 0)
 		delete animals[num];
 	return (0);
 }
