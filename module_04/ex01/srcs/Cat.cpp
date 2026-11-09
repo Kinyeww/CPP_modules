@@ -28,7 +28,7 @@ Cat& Cat::operator=(const Cat& other)
 	if (this != &other)
 	{
 		this->_type = other._type;
-		this->_brain = new Brain(*other._brain);
+		*this->_brain = *other._brain;
 	}
 	return *this;
 }

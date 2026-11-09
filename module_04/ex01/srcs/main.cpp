@@ -7,29 +7,26 @@
 
 int	main(void)
 {
-	Animal	*ptrAnimal = new Animal();
-	Animal	*ptrCat = new Cat();
-	Animal	*ptrDog = new Dog();
+	Animal *animals[2] = { new Dog(), new Cat() };
+	animals[0]->makeSound();
+	animals[1]->makeSound();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	std::cout << "Animal type: " << ptrAnimal->getType() << '\n';
-	std::cout << "Animal type: " << ptrCat->getType() << '\n';
-	std::cout << "Animal type: " << ptrDog->getType() << '\n';
-	ptrAnimal->makeSound();
-	ptrCat->makeSound();
-	ptrDog->makeSound();
+	std::cout << "\n===testing deep copy===\n" << '\n';
+	Dog a;
+	Dog b(a);
+	Dog c;
+	c = a;
+	c = c;
 
-	std::cout << "\n== Wrong Animal Test ==\n" <<'\n';
-	WrongAnimal	*ptrWrongAnimal = new WrongAnimal();
-	WrongAnimal	*ptrWrongCat = new WrongCat();
-
-	std::cout << "Animal type: " << ptrWrongAnimal->getType() << '\n';
-	std::cout << "Animal type: " << ptrWrongCat->getType() << '\n';
-	ptrWrongAnimal->makeSound();
-	ptrWrongCat->makeSound(); // WrongAnimal makesound will be called due to function target binding at compile time
-	delete (ptrAnimal);
-	delete (ptrCat);
-	delete (ptrDog);
-	delete (ptrWrongAnimal);
-	delete (ptrWrongCat);
+	Cat x;
+	Cat y(x);
+	Cat z;
+	z = x;
+	delete j;//should not create a leak (constructor call new for brain and destructor call delete for brain)
+	delete i;
+	delete animals[0];
+	delete animals[1];
 	return (0);
 }
