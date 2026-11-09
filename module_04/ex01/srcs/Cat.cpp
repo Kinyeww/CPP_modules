@@ -6,13 +6,13 @@
 Cat::Cat() : Animal()
 {
 	_type = "Cat";
-	new Brain();
+	_brain = new Brain();
 	std::cout << "Cat constructor called" << '\n';
 }
 
 Cat::~Cat()
 {
-	delete this->_brain; // how to delete the brain pointer
+	delete (_brain);
 	std::cout << "Cat destructor called" << '\n';
 }
 

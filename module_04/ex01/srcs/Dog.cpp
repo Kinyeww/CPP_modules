@@ -6,13 +6,13 @@
 Dog::Dog() : Animal()
 {
 	_type = "Dog";
-	new Brain();
+	_brain = new Brain();
 	std::cout << "Dog constructor called" << '\n';
 }
 
 Dog::~Dog()
 {
-	delete 
+	delete (_brain);
 	std::cout << "Dog destructor called" << '\n';
 }
 
