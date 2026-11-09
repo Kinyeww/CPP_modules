@@ -19,6 +19,7 @@ Cat::~Cat()
 Cat::Cat(const Cat& other) : Animal(other)
 {
 	std::cout << "Cat copy constructor called" << '\n';
+	this->_brain = new Brain(); // allocate new memory for the brain pointer
 	*this = other;
 }
 
